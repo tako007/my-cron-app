@@ -4,12 +4,16 @@ on:
   schedule:
     - cron: "* * * * *"
   workflow_dispatch:      
-  repository_dispatch:     # BU SATIRI EKLEDİK
-    types: [external_trigger] # BU İSİM ÖNEMLİ
+  repository_dispatch:
+    types: [external_trigger]
 
 jobs:
   run-cron:
     runs-on: ubuntu-latest
+    # Burası önemli: Botun dosyayı güncelleyebilmesi için yazma izni veriyoruz
+    permissions:
+      contents: write
+
     steps:
       - name: Repo'yu çek
         uses: actions/checkout@v4
