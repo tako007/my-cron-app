@@ -2,13 +2,14 @@ name: Cron Job
 
 on:
   schedule:
-    - cron: "* * * * *"   # HER 1 DAKİKA
-  workflow_dispatch:      # Manuel tetikleme için (çok faydalı)
+    - cron: "* * * * *"
+  workflow_dispatch:      
+  repository_dispatch:     # BU SATIRI EKLEDİK
+    types: [external_trigger] # BU İSİM ÖNEMLİ
 
 jobs:
   run-cron:
     runs-on: ubuntu-latest
-
     steps:
       - name: Repo'yu çek
         uses: actions/checkout@v4
