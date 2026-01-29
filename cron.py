@@ -1,5 +1,6 @@
 from datetime import datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 p = Path("runs.txt")
 now = datetime.now(ZoneInfo("Europe/Istanbul")).isoformat()
