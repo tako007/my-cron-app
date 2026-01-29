@@ -1,8 +1,7 @@
 name: Cron Job
 
 on:
-  schedule:
-    - cron: "* * * * *"
+
   workflow_dispatch:      
   repository_dispatch:
     types: [external_trigger]
